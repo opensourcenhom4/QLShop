@@ -1,0 +1,386 @@
+/*header*/
+.header{
+	position: relative;
+	background-color: #212125;
+}
+.header__topbar a{
+	text-decoration: none;
+	color:#fff;
+}
+
+ .header__topbar a:hover{
+ 	color: yellow;
+ }
+/*topbar*/
+.topbar-info{
+	padding:18px 0;
+}
+.topbar-info .topbar-info__item{
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	margin-right: 45px;
+}
+.topbar-info .topbar-info__item i{
+	margin-right: 5px;
+}
+.topbar-info .topbar-info__item:last-child{
+	margin-right: 0;
+}
+
+/*menu search*/
+.menu-search{
+	display: flex;
+	justify-content: flex-end;
+}
+.menu-search a{
+	color: #fff;
+}
+.menu-search a:hover{
+	color: yellow;
+}
+/*menu*/
+.menu ul{
+	list-style: none;
+	padding: 0;
+}
+.menu ul li{
+	position: relative;
+}
+.menu ul li a{
+	text-decoration: none;
+	display: block;
+
+}
+.menu .menu__list{
+	display: flex;
+	flex-wrap: wrap;
+}
+.menu .menu__list >li >a{
+	padding:25px 25px;
+}
+.menu .menu__list-sub{
+	position: absolute;
+	top:100%;
+	left:0;
+	width: 200px;
+	background: #464444;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+}
+.menu .menu__list-sub li a{
+	padding: 5px 25px;
+}
+.menu ul li:hover > .menu__list-sub{
+	opacity: 1;
+	visibility: visible;
+}
+
+/*search*/
+.search form{
+	position: relative;
+	margin-top:20px;
+}
+.search form .search__input{
+	position: absolute;
+	right: 100%;
+	top:0;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+	padding:5px 15px;
+	border:0;
+	outline: none !important;
+}
+.search form .search__submit{
+	border:0;
+	cursor: pointer;
+	background: transparent;
+	position: relative;
+	top:5px;
+}
+.search form .search__submit i{
+	color: #fff;
+}
+.search form:hover .search__input{
+	opacity: 1;
+	visibility: visible;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+/*Slide*/
+ .slideshow .container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 20%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.slideshow .active,
+.demo:hover {
+  opacity: 1;
+}
+/*content*/
+.content{
+	background-color: #ddd;
+	padding-top: 15px;
+}
+/*content-left*/
+.box-container {padding-bottom:10px; width:100%; display:inline-block;}
+.product-category .header span{
+	padding-left: 10px;
+	color: #fff;
+}
+.product-category{
+	padding-left: 0px; width: 100%; text-align: center;
+}
+.product-category ul{
+	padding-left: 0px; width: 100%;
+}
+.product-category ul li {padding:0px 9px 0px 7px;list-style: none;width: 100%; }
+.product-category ul li a { color:#666;display:block; text-decoration: none;}
+.product-category ul li a:hover, .product-category ul li a.selected {background-color: pink}
+.product-category ul li a span {display:block; padding:8px 0px 8px 0px;}
+	
+.support{border:1px solid #cccccc;margin-bottom: 15px;text-align: center;}
+.support_title{margin-top: 10px;padding-bottom: 5px;color:red;}
+.support_ym{margin-bottom: 10px;}
+
+
+/*content -right*/
+.list_product{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.list_product .product{
+	display: flex;
+	flex-direction: column;
+	width: 32%;
+}
+.box-home .header .promote a{
+	color: #fff;
+	padding-left: 15px;
+
+}
+.list_product .info a{
+	color: black;
+	text-decoration: none;
+}
+/*pageting*/
+
+/*footer*/
+
+.footer{
+	background-color: #212125;
+	opacity: 0.8;
+	color: white;
+	padding-top: 90px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+}
+.footer a{
+	color: white;
+	text-decoration: none;
+}
+.footer a:hover{
+	color: yellow;
+}
+.t-footer{
+	display: flex;
+	flex-wrap: wrap;
+}
+.lhe{
+
+	opacity: 0.6
+}
+.lhe p{
+	padding: 20px 0;
+}
+.list__lhe{
+	display: flex;
+	flex-direction: column;
+}
+.list__lhe a{
+	text-decoration: none;
+	padding: 10px 0;
+}
+.list__lhe >a >i{
+	padding-right: 5px;
+}
+.t-footer >div >b{
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	padding-bottom: 35px;
+} 
+.lastnews >div{
+	display: flex;
+	flex-direction: column;
+}
+.lastnews >div >a{
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	padding-top: 30px;
+	opacity: 0.6;
+	text-decoration: none;
+}
+.lastnews >div >i{
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	padding-bottom: 20px;
+	opacity: 0.3;
+}
+.line{
+	  border-width: 1px;
+  border-color: rgb(42, 42, 42);
+  border-style: solid;
+  background-color: rgb(255, 255, 255);
+}
+.list__hot{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.test{
+	position: relative;
+	width: 31%;
+	height: auto;
+	text-align: center;
+	margin-top: 25px;
+	margin-right: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.test a{
+	position: absolute;
+	z-index: 300;
+}
+.test img{
+	width: 100%;
+	height:100%;
+	opacity: 0.9;
+}
+.test:hover img{
+	opacity: 0.3;
+}
+.btg{
+	display: flex;
+	flex-wrap: wrap;
+
+	margin-top: 70px;
+}
+.bt{
+	width: 25%;
+}
+.bt img{
+	width: 100%;
+	height: auto;
+}
+.ic{
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	text-align: center;
+	padding: 30px 0;
+	color: rgb(100, 100, 100);
+}
+.ic__item {
+	display: flex;
+	justify-content: center;
+}
+.ic a{
+	  color: rgb(100, 100, 100);
+	  opacity: 0.7;
+	  padding-right: 20px;
+}
+.ic a:hover{
+	opacity: 1;
+	  color: rgb(255, 255, 255);
+}
+@media(max-width: 991px)
+{
+	.t-footer{
+		width: 100%;
+	}
+	.lhe{
+		width: 50%;
+	}
+	.lastnews{
+		width: 50%;
+	}
+	.topdes{
+		width: 100%;
+	}
+}
