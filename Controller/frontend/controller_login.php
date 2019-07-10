@@ -7,25 +7,26 @@
 			$this->model = new model();
 			//----------------
 			//neu user an nut submit
-			if($_SERVER["REQUEST_METHOD"] == "POST"){
-				$c_email = $_POST["c_email"];
-				$c_password = $_POST["c_password"];
+			$act = isset($_GET["act"]) ? $_GET["act"]:"";
+			switch($act){
+				case "login":
+					$form_action = "index.php?controller=login&act=do_login";
+				break;
+				case "do_login":
+					$email = $_POST["email"];
+				$password = $_POST["password"];
 				//kiem tra dang nhap
-				$check = $this->model->get_a_record("select email, password, hovaten from tbl_customer where email='$c_email'");
-				if(isset($check->c_email)){
-					if($check->c_password == md5($c_password)){
-						$name= $check->c_fullname;
+				$check = $this->model->get_a_record("select * from tbl_customer where email='$email'");
+				if(isset($check->email)){
+					if($check->password == md5($password)){
 						//gan vao session
-						$_SESSION["c_email"] = $c_email;
-						$_SESSION["c_fullname"] = $name;
-						$_SESSION["c_password"] = $c_password;
-						//quay tro lai trang admin
-						header("location:index.php");
+						$_SESSION["email"] = $email;
 					}
 				}
-
-			}
+				header("location:index.php");
 			//----------------
+				break;
+		}
 			//load view
 			include "view/frontend/view_login.php";
 		}

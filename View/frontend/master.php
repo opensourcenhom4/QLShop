@@ -39,26 +39,36 @@
 						<?php if (isset($_SESSION['email'])) {	?>
 						<div class="topbar-info infor-card" >
 							<span class="topbar-info__item dropdown-toggle" data-toggle="dropdown" >
-								<a href="#" ><i class="icofont-user"></i>
-								Tên user</a>
+								<a href="#" ><i class="icofont-user"></i><?php echo $_SESSION['email']; ?>
+								</a>
 								 <div class="dropdown-menu bg-dark">
-						            <a class="dropdown-item" href="admin.php?controller=changepass&act=change">Thông tin cá nhân</a>
-						            <a class="dropdown-item" href="admin.php?controller=logout">Logout</a>
+						            <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+						            <a class="dropdown-item" href="index.php?controller=logout">Logout</a>
 						          </div>
 							</span> 
 							<span class="mail topbar-info__item">
-								<a href="#"><i class="icofont-user"></i>
-								Cart</a>
-							</span>
-						</div>
+								<a href="index.php?controller=cart"><i class="icofont-shopping-cart"></i>
+								Có <strong>
+		                         <?php 
+		                            if(isset($_SESSION["cart"])){
+		                                $total = 0;
+		                                foreach ($_SESSION["cart"] as $value) {
+		                                    $total++;
+		                                }
+		                                echo $total;
+		                            }
+		                          ?>   
+		                        </strong> sản phẩm trong giỏ hàng của bạn</span></a>
+									</span>
+								</div>
 					<?php } else{ ?>
 						<div class="topbar-info">
 							<span class="topbar-info__item">
-								<a href="#"><i class="icofont-lock"></i>
+								<a href="index.php?controller=login&act=login"><i class="icofont-lock"></i>
 								Login</a>
 							</span> 
 							<span class="mail topbar-info__item">
-								<a href="#"><i class="icofont-user"></i>
+								<a href="index.php?controller=login&act=register"><i class="icofont-user"></i>
 								Register</a>
 							</span>
 						</div>

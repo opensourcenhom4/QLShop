@@ -17,7 +17,7 @@
 						echo "<script>location.href='index.php?controller=cart';</script>";
 					}
 					else{
-						echo "<script>location.href='index.php?controller=product';</script>";
+						echo "<script>location.href='index.php?controller=login';</script>";
 					}
 				break;
 				case "delete":
@@ -37,7 +37,6 @@
 						$this->cart_update($product["pk_product_id"],$soluong);
 					}
 					echo "<script>location.href='index.php?controller=cart';</script>";
-
 				break;
 			}
 			//===========

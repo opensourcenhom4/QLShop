@@ -1,6 +1,4 @@
 <?php 
-	//huy session
-	unset($_SESSION["c_email"]);
-	//quay tro lai trang admin.php
+	session_destroy();
 	header("location:index.php");
  ?>
