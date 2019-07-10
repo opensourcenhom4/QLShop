@@ -1,4 +1,4 @@
-<div class="col-lg-9 right-col">
+
 <!-- Chi tiet san pham -->
 	<div class="box-container">
     	<div class="box-home box-news">
@@ -29,11 +29,10 @@
                                 $type = $this->model->get_a_record("select * from tbl_product_type where pk_product_type_id=".$arr->fk_product_type_id);
                                 echo isset($type->c_name) ? $type->c_name : "";
                              ?>
-
                         </p>
                         <p>Giá: <?php echo number_format($arr->c_price); ?></p>
                         <p>Giá sale: <?php echo number_format($arr->price_sale); ?></p>
-                        <p> <a href="index.php?controller=cart&act=add&id=<?php echo $rows->pk_product_id; ?>"><i class="icofont-cart"></i> Mua sản phẩm này</a></p>
+                        <p> <a href="index.php?controller=cart&act=add&id=<?php echo $arr->pk_product_id; ?>"><i class="icofont-cart"></i> Mua sản phẩm này</a></p>
                         <p>kích cỡ có:  <?php echo $arr->c_content; ?></p>
                     </div>
                 </div>
@@ -71,5 +70,5 @@
 </style>                 
         </div>
     </div>
-</div>
+
     <!-- hết chi tiet san pham -->

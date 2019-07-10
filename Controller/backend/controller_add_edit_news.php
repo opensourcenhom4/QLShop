@@ -16,7 +16,6 @@
 				case "do_edit":
 					$c_name = $_POST["c_name"];
 					$c_description = $_POST["c_description"];
-					
 					//update ban ghi co id truyen vao
 					$this->model->execute("update tbl_news set c_name='$c_name',c_description='$c_description' where pk_news_id=$id");
 					//-----------

@@ -36,6 +36,22 @@
 						</div>
 					</div>
 					<div class="col-lg-6 text-lg-right">
+						<?php if (isset($_SESSION['email'])) {	?>
+						<div class="topbar-info infor-card" >
+							<span class="topbar-info__item dropdown-toggle" data-toggle="dropdown" >
+								<a href="#" ><i class="icofont-user"></i>
+								Tên user</a>
+								 <div class="dropdown-menu bg-dark">
+						            <a class="dropdown-item" href="admin.php?controller=changepass&act=change">Thông tin cá nhân</a>
+						            <a class="dropdown-item" href="admin.php?controller=logout">Logout</a>
+						          </div>
+							</span> 
+							<span class="mail topbar-info__item">
+								<a href="#"><i class="icofont-user"></i>
+								Cart</a>
+							</span>
+						</div>
+					<?php } else{ ?>
 						<div class="topbar-info">
 							<span class="topbar-info__item">
 								<a href="#"><i class="icofont-lock"></i>
@@ -46,6 +62,7 @@
 								Register</a>
 							</span>
 						</div>
+					<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -217,49 +234,28 @@
 	                <div class="support">
 	                    <div class="support_title">Hỗ trợ bán hàng</div>
 	                    <div>
-	                        <img src="Public/frontend/img/icon-skype.jpg" border="0">
+	                        <i class="icofont-facebook-messenger" style="font-size: 35px; color: blue;"></i>
 	                    </div>
 	                    <div class="support_title">Hỗ trợ bán hàng</div>
 	                    <div class="support_ym">
-	                        <img src="Public/frontend/img/icon-skype.jpg" border="0">
+	                       <i class="icofont-phone-circle"style="font-size: 35px; color: blue;"></i>
 	                    </div>
 	                </div>
-	                <!-- end support -->
-	                <!-- left news -->
-	               <!--  <div class="box-container">
-						<div class="box-left">
-	                    	<div class="c_header">
-	                        	<a href="#">Tin tức</a>
-	                        </div>
-	                        <div class="content">
-	                        <marquee direction="up" scrollamount="2" scrolldelay="2" onmouseover="this.stop()" onmouseout="this.start()">
-								<ul>
-	                            	<li><a href="#">7 bí quyết chống đau lưng hiệu quả</a></li>
-	                                <li><a href="#">Ăn uống hợp lý có thể tăng cường sức khỏe và phòng chống bệnh tật</a></li>
-	                                <li><a href="#">Mách mẹ cách hiểu về các thành phần trong sữa</a></li>
-	                                <li><a href="#">Điều con muốm từ bố mẹ</a></li>
-	                                <li><a href="#">Trẻ có thể bị dối loạn phát triển và một số biểu hiện</a></li>
-	                            </ul>
-	                            </marquee>
-	                        </div>
-	                    </div>
-	                </div> -->
-	                <!-- end left news -->  
 	            </div>
             <!-- end left --> 
-            <!-- begin right -->
-         
-            
-         
-          <?php
-           //load controller
-          if(file_exists($controller))
-            include $controller;
-         		 // include "View/frontend/view_home.php";
-    		?> 
-            </div>
-           
+            <!-- begin right -->  
+		         <div class="col-lg-9 right-col">
+		            <!-- ----------------- -->
+		          <?php
+		           //load controller
+		          if(file_exists($controller))
+		            include $controller;
+		         		 //include "View/frontend/view_card.php";
+		    		?> 
+		         </div>
+           </div>
         </div>
+    </div>
 <!-- endcontent -->
 	<!-- footer -->
 	<div class="footer">

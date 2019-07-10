@@ -1,4 +1,4 @@
-<div class="col-lg-9 right-col">
+
 <div class="row" style="margin-top: 20px;"> 
         <!-- news -->
         <div class="col-md-12 col-sm-12 " style="padding-right: 130px;padding-left: 120px; ">
@@ -11,4 +11,3 @@
         </div>
         <!-- end news --> 
       </div>
-</div>

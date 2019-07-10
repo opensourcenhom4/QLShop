@@ -16,7 +16,6 @@
 						</div>
 					</div>
 					<!-- end form group -->
-	
 					<!-- form group -->
 					<div class="form-group">
 						<div class="row">

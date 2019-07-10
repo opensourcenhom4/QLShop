@@ -1,7 +1,7 @@
  <!-- danh mục sản phẩm -->
 	                <div class="box-container">
 	                    <div class="product-category">
-	                        <div class="header"><span>Loại sản phẩm</span></div>
+	                        <div class="header"><span>Hãng sản phẩm</span></div>
 	                            <div id="product_category">
 	                            <ul>
                                 <?php 

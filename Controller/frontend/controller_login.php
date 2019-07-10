@@ -11,24 +11,23 @@
 				$c_email = $_POST["c_email"];
 				$c_password = $_POST["c_password"];
 				//kiem tra dang nhap
-				$check = $this->model->get_a_record("select c_email, c_password, c_fullname from tbl_user where c_email='$c_email'");
+				$check = $this->model->get_a_record("select email, password, hovaten from tbl_customer where email='$c_email'");
 				if(isset($check->c_email)){
 					if($check->c_password == md5($c_password)){
-						
 						$name= $check->c_fullname;
 						//gan vao session
 						$_SESSION["c_email"] = $c_email;
 						$_SESSION["c_fullname"] = $name;
 						$_SESSION["c_password"] = $c_password;
 						//quay tro lai trang admin
-						header("location:admin.php");
+						header("location:index.php");
 					}
 				}
 
 			}
 			//----------------
 			//load view
-			include "view/backend/view_login.php";
+			include "view/frontend/view_login.php";
 		}
 	}
 	new controller_login();

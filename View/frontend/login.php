@@ -104,8 +104,6 @@
 									</button>
 								</form>
 							</div>
-							
-						
 						</div>
 					</div>
 						</div>
@@ -210,95 +208,83 @@
 	            </div>
             <!-- end left --> 
             <!-- begin right -->
-         
             		 <div class="col-lg-9 right-col">
             <!-- ----------------- -->
-            	<div class="main">
-	<div class="login_left">
-		<h3>Đăng Ký</h3>
-		<div class="btn">
-			<form>
-				<input type="button"  onclick="location.href='register.html';" value="create an account" />
-			</form>
-		</div>
-	</div>
-	<div class="login_left">
-		<h3>Đăng nhập</h3>
-	<!-- start registration -->
-	<div class="registration">
-		<!-- [if IE] 
-		    < link rel='stylesheet' type='text/css' href='ie.css'/>  
-		 [endif] -->  
-		  
-		<!-- [if lt IE 7]>  
-		    < link rel='stylesheet' type='text/css' href='ie6.css'/>  
-		<! [endif] -->  
-		<script>
-			(function() {
-		
-			// Create input element for testing
-			var inputs = document.createElement('input');
-			
-			// Create the supports object
-			var supports = {};
-			
-			supports.autofocus   = 'autofocus' in inputs;
-			supports.required    = 'required' in inputs;
-			supports.placeholder = 'placeholder' in inputs;
-		
-			// Fallback for autofocus attribute
-			if(!supports.autofocus) {
-				
-			}
-			
-			// Fallback for required attribute
-			if(!supports.required) {
-				
-			}
-		
-			// Fallback for placeholder attribute
-			if(!supports.placeholder) {
-				
-			}
-			
-			// Change text inside send button on submit
-			var send = document.getElementById('register-submit');
-			if(send) {
-				send.onclick = function () {
-					this.innerHTML = '...Sending';
-				}
-			}
-		
-		})();
-		</script>
-	<div class="registration_left">
-		 <div class="registration_form">
-		 <!-- Form -->
-			<form id="registration_form" action="contact.php" method="post">
-				<div>
-					<label>
-						<input placeholder="email:" type="email" tabindex="3" required="">
-					</label>
+		            	<div class="main">
+							<div class="login_left">
+								<h3>Đăng Ký</h3>
+								<div class="btn">
+									<form>
+										<input type="button"  onclick="location.href='register.html';" value="create an account" />
+									</form>
+								</div>
+							</div>
+							<div class="login_left">
+								<h3>Đăng nhập</h3>
+							<!-- start registration -->
+							<script>
+								(function() {
+								// Create input element for testing
+								var inputs = document.createElement('input');
+								
+								// Create the supports object
+								var supports = {};
+								
+								supports.autofocus   = 'autofocus' in inputs;
+								supports.required    = 'required' in inputs;
+								supports.placeholder = 'placeholder' in inputs;
+							
+								// Fallback for autofocus attribute
+								if(!supports.autofocus) {
+									
+								}
+								
+								// Fallback for required attribute
+								if(!supports.required) {
+									
+								}
+							
+								// Fallback for placeholder attribute
+								if(!supports.placeholder) {
+									
+								}
+								
+								// Change text inside send button on submit
+								var send = document.getElementById('register-submit');
+								if(send) {
+									send.onclick = function () {
+										this.innerHTML = '...Sending';
+									}
+								}
+							
+							})();
+							</script>
+						<div class="registration_left">
+							 <div class="registration_form">
+							 <!-- Form -->
+								<form id="registration_form" action="" method="post">
+									<div>
+										<label>
+											<input placeholder="email:" type="email" tabindex="3" required="">
+										</label>
+									</div>
+									<div>
+										<label>
+											<input placeholder="password" type="password" tabindex="4" required="">
+										</label>
+									</div>						
+									<div>
+										<input type="submit" value="sign in" id="register-submit">
+									</div>
+								</form>
+								<!-- /Form -->
+							</div>
+						</div>
+						</div>
+						<!-- end registration -->
+						</div>
+						<div class="clear"></div>
 				</div>
-				<div>
-					<label>
-						<input placeholder="password" type="password" tabindex="4" required="">
-					</label>
-				</div>						
-				<div>
-					<input type="submit" value="sign in" id="register-submit">
-				</div>
-			</form>
-			<!-- /Form -->
-		</div>
-	</div>
-	</div>
-	<!-- end registration -->
-	</div>
-	<div class="clear"></div>
-</div>
-                                <!-- end product -->
-            
             <!-- end right -->	
             	</div>
             </div>
