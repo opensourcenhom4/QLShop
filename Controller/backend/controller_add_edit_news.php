@@ -27,7 +27,6 @@
 				case "do_add":
 					$c_name = $_POST["c_name"];
 					$c_description = $_POST["c_description"];
-					
 					//insert ban ghi
 					$this->model->execute("insert into tbl_news(c_name,c_description) values('$c_name','$c_description')");
 					header("location:admin.php?controller=news");

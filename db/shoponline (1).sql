@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 08, 2019 lúc 04:57 PM
+-- Thời gian đã tạo: Th7 11, 2019 lúc 04:55 AM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.2.7
 
@@ -66,7 +66,8 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`customer_id`, `hovaten`, `diachi`, `dienthoai`, `ghichu`, `email`, `password`) VALUES
-(1, 'Vũ a', 'Hà Nội', '06334567654', '', 'vua@gmail.com', '123');
+(2, 'Vux B', '03326511622', '03326511622', '', 'vub@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(3, 'Vux B', '03326511622', '03326511622', '', 'vva@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -98,8 +99,18 @@ CREATE TABLE `tbl_order` (
   `customer_id` int(11) NOT NULL,
   `ngaymua` date NOT NULL,
   `gia` float NOT NULL,
-  `trangthai` int(11) NOT NULL
+  `trangthai` int(11) NOT NULL,
+  `ghichu` text NOT NULL,
+  `diachi` varchar(500) NOT NULL,
+  `sdt` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`order_id`, `customer_id`, `ngaymua`, `gia`, `trangthai`, `ghichu`, `diachi`, `sdt`) VALUES
+(1, 1, '2019-07-10', 250000, 0, '34 sp15', 'Hà Nội', '06334567654');
 
 -- --------------------------------------------------------
 
@@ -113,6 +124,14 @@ CREATE TABLE `tbl_order_detail` (
   `fk_product_id` int(11) NOT NULL,
   `c_number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_order_detail`
+--
+
+INSERT INTO `tbl_order_detail` (`order_detail_id`, `order_id`, `fk_product_id`, `c_number`) VALUES
+(1, 1, 15, 1),
+(2, 1, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -138,14 +157,14 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`pk_product_id`, `fk_category_product_id`, `fk_product_type_id`, `c_name`, `c_description`, `c_content`, `c_img`, `c_hotproduct`, `c_price`, `price_sale`) VALUES
-(1, 1, 1, 'Sản phẩm 1', 'hjbfhbjdscbh', '', 'sbjbfjsbh.jpg', 1, 120000, 0),
-(2, 1, 2, 'Sản phẩm 2', 'jnvnsdjvb', '', 'enj.jpg', 1, 1200000, 0),
-(3, 1, 1, 'Sản phẩm 3', 'jnvnsdjvb', '', 'enj.jpg', 1, 1200000, 0),
-(4, 2, 1, 'Sản phẩm 4', 'jnvnsdjvb', '', 'enj.jpg', 1, 1200000, 0),
-(5, 2, 2, 'Sản phẩm 5', 'jnvnsdjvb', '', 'enj.jpg', 1, 1200000, 0),
-(6, 2, 2, 'Sản phẩm 6', 'jnvnsdjvb', '', 'enj.jpg', 1, 1200000, 0),
-(7, 1, 1, 'Sản phẩm 7', 'mnjcnmsdvjbj', '', '', 1, 120000, 100000),
-(8, 2, 1, 'Sản phẩm 8', 'mnjcnmsdvjbj', '', '', 1, 120000, 100000),
+(1, 1, 1, 'Sản phẩm 1', '<p>hjbfhbjdscbh</p>\r\n', '', '15626592325.jpg', 1, 120000, 0),
+(2, 1, 2, 'Sản phẩm 2', '<p>jnvnsdjvb</p>\r\n', '', '15626592164.jpg', 1, 1200000, 0),
+(3, 1, 1, 'Sản phẩm 3', '<p>jnvnsdjvb</p>\r\n', '', '15626591853.jpg', 1, 1200000, 0),
+(4, 2, 1, 'Sản phẩm 4', '<p>jnvnsdjvb</p>\r\n', '', '15626591623.jpg', 1, 1200000, 0),
+(5, 2, 2, 'Sản phẩm 5', '<p>jnvnsdjvb</p>\r\n', '', '15626591432.jpg', 1, 1200000, 0),
+(6, 2, 2, 'Sản phẩm 6', '<p>jnvnsdjvb</p>\r\n', '', '15626591271.jpg', 1, 1200000, 0),
+(7, 1, 1, 'Sản phẩm 7', '<p>mnjcnmsdvjbj</p>\r\n', '', '1562658840pic2.jpg', 1, 120000, 100000),
+(8, 2, 1, 'Sản phẩm 8', '<p>mnjcnmsdvjbj</p>\r\n', '', '1562658812pic1.jpg', 1, 120000, 100000),
 (10, 4, 1, 'Sản phẩm 10', '<p>mnjcnmsdvjbj</p>\r\n', '', '1562552086pic6.jpg', 1, 120000, 100000),
 (11, 1, 1, 'Sản phẩm 11', '<p>mnjcnmsdvjbj</p>\r\n', '', '1562552068pic5.jpg', 1, 120000, 100000),
 (12, 2, 2, 'Sản phẩm 12', '<p>mnjcnmsdvjbj</p>\r\n', '', '1562552034det_pic1.jpg', 1, 120000, 100000),
@@ -207,7 +226,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`pk_user_id`, `c_email`, `c_password`, `c_fullname`) VALUES
-(1, 'admin@mail.com', '202cb962ac59075b964b07152d234b70', 'Nguyễn Văn A'),
+(1, 'admin@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Nguyễn Văn A'),
 (2, 'admin1@mail.com', '202cb962ac59075b964b07152d234b70', 'Nguyễn Văn B'),
 (3, 'admin2@mail.com', '202cb962ac59075b964b07152d234b70', 'Nguyễn Văn C'),
 (4, 'admin3@mail.com', '202cb962ac59075b964b07152d234b70', 'Nguyễn Văn D');
@@ -284,49 +303,49 @@ ALTER TABLE `tbl_category_product`
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_news`
 --
 ALTER TABLE `tbl_news`
-  MODIFY `pk_news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pk_news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `pk_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pk_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product_type`
 --
 ALTER TABLE `tbl_product_type`
-  MODIFY `pk_product_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `pk_product_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_slide`
 --
 ALTER TABLE `tbl_slide`
-  MODIFY `pk_slide_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pk_slide_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `pk_user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pk_user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

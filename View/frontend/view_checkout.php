@@ -7,31 +7,43 @@
         </div>
         <div class="row">
             <div class="col-10 content">  
-        		<legend>Thanh toán đơn hàng</legend>
-        		<form method="POST" action="">
-        			<table cellpadding="5">
-        				<tr>
-        					<td>Họ và tên</td>
-        					<td><input type="text" name="hoten"></td>
-        				</tr>
-        				<tr>
-        					<td>Địa chỉ</td>
-        					<td><input type="text" name="diachi"></td>
-        				</tr>
-        				<tr>
-        					<td>Điện thoại</td>
-        					<td><input type="text" name="dienthoai"></td>
-        				</tr>
-        				<tr>
-        					<td>Ghi chú</td>
-        					<td><textarea name="ghichu" style="width: 150px; height: 100px;"></textarea></td>
-        				</tr>
-        				<tr>
-        					<td></td>
-        					<td><input type="submit" value="Thanh toán" name=""></td>
-        				</tr>
-        			</table>
-        		</form>
+                <form method="post" enctype="multipart/form-data" action="<?php echo $form_action; ?>">
+                    <!-- form group -->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2 text-right">Địa chỉ</div>
+                            <div class="col-md-10">
+                                <input type="text" name="diachi" value="<?php echo $arr->diachi; ?>" required class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end form group -->
+                    <!-- form group -->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2 text-right">Số ĐT: </div>
+                            <div class="col-md-10">
+                                <input type="text" name="dienthoai" value="<?php echo $arr->dienthoai; ?>" required class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end form group -->
+                    <!-- form group -->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2 text-right">Ghi chú</div>
+                            <div class="col-md-10">
+                                <textarea name="ghichu" row='10' placeholder=" Cỡ giày và màu cảu các sp bạn vừa mua"></textarea>
+                                <script type="text/javascript">
+                                    CKEDITOR.replace("c_description");
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end form group -->
+                    <input type="submit" value="Process" class="btn btn-primary"> 
+                    <input type="reset" value="Reset" class="btn btn-danger">
+                </form>
 		  </div>
         </div>
 	</div>

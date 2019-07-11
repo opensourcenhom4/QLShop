@@ -3,7 +3,7 @@
 		<h3>Đăng Ký</h3>
 		<div class="btn">
 			<form>
-				<a href="admin.php?controller=register&act=register" class="btn btn-primary">Đăng ký(Tạo một tài khoản mới)</a>
+				<a href="index.php?controller=register&act=register" class="btn btn-primary">Đăng ký(Tạo một tài khoản mới)</a>
 			</form>
 		</div>
 	</div>
@@ -67,4 +67,4 @@
 	</div>
 </div>
 <!-- end registration -->
-	</div>
+</div>

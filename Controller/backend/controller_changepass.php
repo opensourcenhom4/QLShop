@@ -19,8 +19,8 @@
 						$pass = md5($c_cofpass);
 						$_SESSION["c_password"] = $c_cofpass;
 				}
-				//update ban ghi co id truyen vao
-				$this->model->execute("update tbl_user set c_password='$pass' where c_email = '$c_email' ");
+					//update ban ghi co id truyen vao
+					$this->model->execute("update tbl_user set c_password='$pass' where c_email = '$c_email' ");
 					//quay tro lai trang admin
 					header("location:admin.php");
 				break;

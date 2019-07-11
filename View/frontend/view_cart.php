@@ -1,5 +1,3 @@
-
-
 <!-- ----------------- -->
     <!-- san pham noi bat -->
     <div class="box-container">
@@ -39,7 +37,7 @@
                     <input type="button" value="Xóa giỏ hàng" onclick="location.href='index.php?controller=cart&act=destroy';" name="">
                     <input type="submit" value="Cập nhật giỏ hàng" name="">
                     <?php if($this->cart_number()>0){ ?>
-                        <input type="button" value="Thanh toán đơn hàng" onclick="location.href='index.php?controller=checkout';" name="">
+                        <input type="button" value="Thanh toán đơn hàng" onclick="location.href='index.php?controller=checkout&act=checkout';" name="">
                     <?php } ?>
                 </p>      
             </div>

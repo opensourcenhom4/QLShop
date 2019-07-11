@@ -13,11 +13,11 @@
 					if (isset($_SESSION['email'])) {
 						# code...
 						$this->cart_add($pk_product_id);
-						header("location: index.php");
+						// header("location: index.php");
 						echo "<script>location.href='index.php?controller=cart';</script>";
 					}
 					else{
-						echo "<script>location.href='index.php?controller=login';</script>";
+						echo "<script>location.href='index.php?controller=login&act=login';</script>";
 					}
 				break;
 				case "delete":

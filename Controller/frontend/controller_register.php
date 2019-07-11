@@ -10,7 +10,7 @@
 			$act = isset($_GET["act"]) ? $_GET["act"]:"";
 			switch($act){
 				case "register":
-					$form_action = "index.php?controller=login&act=do_register";
+					$form_action = "index.php?controller=register&act=do_register";
 				break;
 				case "do_register":
 				$hovaten = $_POST["hovaten"];
@@ -21,12 +21,20 @@
 				$password = md5($password);
 				//kiem tra dang nhap
 				$check = $this->model->get_a_record("select email, password from tbl_customer where email='$email'");
-				if(!isset($check->email)){
+				if(isset($check->email) == false){
 					$_SESSION["email"] = $email;
 					//insert ban ghi
-					$this->model->execute("insert into tbl_customer(hovaten,email,password,dienthoai,diachi) values('$hovaten','$email','$password','$dienthoai','$dienthoai')");
+					$this->model->execute("insert into tbl_customer(hovaten,email,password,dienthoai,diachi) values('$hovaten','$email','$password','$dienthoai','$diachi')");
+					echo "<script>
+								location.href='index.php';
+							</script>";
 				}
-				header("location:index.php");
+				else{
+					echo "<script>
+							alert ('Đã có tài khoản này');
+							location.href='index.php?controller=login&act=login';
+						</script>";
+				}
 			//----------------
 				break;
 		}

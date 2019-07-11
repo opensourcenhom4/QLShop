@@ -36,27 +36,27 @@
 						</div>
 					</div>
 					<div class="col-lg-6 text-lg-right">
-						<?php if (isset($_SESSION['email'])) {	?>
+						<?php if (isset($_SESSION['hovaten'])) {	?>
 						<div class="topbar-info infor-card" >
 							<span class="topbar-info__item dropdown-toggle" data-toggle="dropdown" >
-								<a href="#" ><i class="icofont-user"></i><?php echo $_SESSION['email']; ?>
+								<a href="#" ><i class="icofont-user"></i><?php echo $_SESSION['hovaten']; ?>
 								</a>
 								 <div class="dropdown-menu bg-dark">
 						            <a class="dropdown-item" href="#">Thông tin cá nhân</a>
-						            <a class="dropdown-item" href="index.php?controller=logout">Logout</a>
-						          </div>
+						            <button class="dropdown-item" onclick="location.href='index.php?controller=logout'">Logout</button>
+						         </div>
 							</span> 
 							<span class="mail topbar-info__item">
 								<a href="index.php?controller=cart"><i class="icofont-shopping-cart"></i>
 								Có <strong>
-		                         <?php 
-		                            if(isset($_SESSION["cart"])){
-		                                $total = 0;
-		                                foreach ($_SESSION["cart"] as $value) {
-		                                    $total++;
-		                                }
-		                                echo $total;
-		                            }
+		                         <?php   
+			                         $total = 0;
+			                            if(isset($_SESSION["cart"])){
+			                                foreach ($_SESSION["cart"] as $value) {
+			                                    $total++;
+			                                } 
+			                            }
+			                         echo $total;
 		                          ?>   
 		                        </strong> sản phẩm trong giỏ hàng của bạn</span></a>
 									</span>
@@ -68,7 +68,7 @@
 								Login</a>
 							</span> 
 							<span class="mail topbar-info__item">
-								<a href="index.php?controller=login&act=register"><i class="icofont-user"></i>
+								<a href="index.php?controller=register&act=register"><i class="icofont-user"></i>
 								Register</a>
 							</span>
 						</div>

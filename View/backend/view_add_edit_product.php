@@ -131,7 +131,8 @@
 						<div class="row">
 							<div class="col-md-2 text-right"></div>
 							<div class="col-md-10">
-								<input type="submit" value="Process" class="btn btn-primary"> <input type="reset" value="Reset" class="btn btn-danger">
+								<input type="submit" value="Process" class="btn btn-primary">
+								 <input type="reset" value="Reset" class="btn btn-danger">
 							</div>
 						</div>
 					</div>
