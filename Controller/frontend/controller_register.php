@@ -23,9 +23,10 @@
 				$check = $this->model->get_a_record("select email, password from tbl_customer where email='$email'");
 				if(isset($check->email) == false){
 					$_SESSION["email"] = $email;
+					$_SESSION['hovaten'] = $hovaten;
 					//insert ban ghi
 					$this->model->execute("insert into tbl_customer(hovaten,email,password,dienthoai,diachi) values('$hovaten','$email','$password','$dienthoai','$diachi')");
-					echo "<script>
+						echo "<script>
 								location.href='index.php';
 							</script>";
 				}
