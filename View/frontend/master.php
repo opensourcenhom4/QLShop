@@ -121,7 +121,7 @@
 							</div>
 							<div class="search">
 								<form>
-									<input type="input" name="search" class="search__input" placeholder="enter key words">
+									<input type="input" name="search" class="search__input" placeholder="nhập tên sp, loại sp, hãng sp">
 									<button class="search__submit" type="submit">
 										<i class="icofont-search"></i>
 									</button>

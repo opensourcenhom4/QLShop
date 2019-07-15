@@ -37,6 +37,9 @@
           <li class="nav-item active">
             <a class="nav-link" href="admin.php?controller=user">Khách hàng</a>
           </li>
+           <li class="nav-item active">
+            <a class="nav-link" href="admin.php?controller=slide">Slide</a>
+          </li>
         </ul>  
         <div class="dropdown">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
