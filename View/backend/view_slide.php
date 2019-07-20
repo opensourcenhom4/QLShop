@@ -12,8 +12,6 @@
 					<tr>
 						<th style="width: 150px;">Ảnh</th>
 						<th>Tên SP</th>
-						
-
 						<th style="width: 120px;"></th>
 					</tr>
 				<?php 
