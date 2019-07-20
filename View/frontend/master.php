@@ -120,8 +120,8 @@
 
 							</div>
 							<div class="search">
-								<form>
-									<input type="input" name="search" class="search__input" placeholder="nhập tên sp, loại sp, hãng sp">
+								<form method="post" action="index.php?controller=search">
+									<input type="text" name="key" class="search__input" placeholder="nhập tên sp,...">
 									<button class="search__submit" type="submit">
 										<i class="icofont-search"></i>
 									</button>
@@ -324,10 +324,10 @@
 				</div>
 			</div>
 			<div class="btg">
-				<div class=" bt"><img src="Public/frontend/img/lg1.jpg"></div>
-				<div class=" bt"><img src="Public/frontend/img/lg2.jpg"></div>
-				<div class=" bt"><img src="Public/frontend/img/lg4.jpg"></div>
-				<div class=" bt"><img src="Public/frontend/img/lg3.jpg"></div>
+				<div class=" bt"><img src="Public/frontend/img/logo1.png"></div>
+				<div class=" bt"><img src="Public/frontend/img/logo2.jpg"></div>
+				<div class=" bt"><img src="Public/frontend/img/logo3.jpg"></div>
+				<div class=" bt"><img src="Public/frontend/img/logo4.png"></div>
 			</div>
 			<div class="col-lg-3 ic">
 				<div class="ic__item">
